@@ -1,0 +1,76 @@
+<!-- Module Automation UI Load N Go  -->
+<div id="Automation-View" class="automationuicard">
+                          <div class="automationuicardHeader">
+                              <p >Automation View</p>
+                          </div>
+                          <div class="row">
+                              <div class="col">
+                                  <div style="margin-top: 10px;">
+                                      <div class="greenstatecard" >
+                                          <p><i class="fa fa-chevron-circle-right padicon" ></i>Job Setup</p>
+                                      </div>
+                                      <div class="greenstatecard">
+                                          <p ><i class="fa fa-chevron-circle-right padicon" ></i>Track In</p>
+                                      </div>
+                                      <div class="greenstatecard">
+                                          <p ><i class="fa fa-chevron-circle-right padicon" ></i>Processing</p>
+                                      </div>
+                                      <div class="greenstatecard">
+                                          <p ><i class="fa fa-chevron-circle-right padicon" ></i>Completed</p>
+                                      </div>
+                                      <div class="greystatecard" style="margin-bottom: 10px;">
+                                          <p ><i class="fa fa-chevron-circle-right padicon"  ></i>Track Out</p>
+                                      </div>
+                                  </div>
+                                  <div>
+                                      <button class="btn btn-primary justify-content-xl-center mainbuttonAUI" (click)="open(contentdetailed)"  type="button"   >Detailed</button>
+                                      <button class="btn btn-primary justify-content-xl-center mainbuttonAUI" (click)="open(commanddetailed)" type="button"  >Command</button>
+                                  </div>
+                              </div>
+                          </div>
+</div>
+
+<!-- Add on  Modal Equipments-->
+<ng-template #contentdetailed let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detailed Equipment information</h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <h3 for="dateOfBirth">Equipment Information of {{equipmentid}}</h3>
+    </div>
+          <p>any Content Here !</p>
+
+
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+
+<!-- Add on  Modal Product Info-->
+<ng-template #commanddetailed let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detailed Command</h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <h3 >Command List of {{equipmentid}}</h3>
+    </div>
+    <div>
+      <p >any command here</p>
+
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base href="/">
+  <title>Root Config Operator UI</title>
+
+  <!--
+    Remove this if you only support browsers that support async/await.
+    This is needed by babel to share largeish helper code for compiling async/await in older
+    browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+
+  <!--
+    This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
+    Learn more about CSP policies at https://content-security-policy.com/#directive
+  -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"> -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';"> -->
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
+  <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
+  <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
+
+  <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
+
+    1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
+    2. UMD - https://github.com/umdjs/umd
+    3. Global variable
+
+    More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
+  -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+      }
+    }
+  </script>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
+
+  <!-- Add your organization's prod import map URL to this script's src  -->
+  <!-- <link rel="preload" href="http://bthtsa1030.infineon.com/cdn/js/single-spa.min.js" as="script"> -->
+
+  <% if (isLocal) { %>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@ifx/root-config": "//localhost:9000/ifx-root-config.js",
+        "@ifx/logdata": "http://localhost:4202/main.js",
+        "@ifx/metadata": "http://localhost:4201/main.js",
+        "@loadnGo": "http://localhost:4204/main.js"
+
+      }
+    }
+  </script>
+  <% } %>
+
+  <script type="systemjs-importmap" src="http://localhost/cdn/json/importmap.json"></script> 
+
+  <!--
+    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
+    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <% if (isLocal) { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+  <% } else { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+  <% } %>
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" >
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"  >
+  
+  <style>
+
+  html * 
+  {
+  font-family: 'Source Sans Pro', sans-serif;
+  }
+  .container {
+  display: grid;
+  grid-template-columns: 250px 255px 255px 255px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  /* gap: 0px 0px; */
+  grid-auto-flow: row;
+  grid-template-areas:
+    "metadata app-header app-header app-header"
+    "metadata app-header app-header app-header"
+    "log-history log-history log-history log-history";
+}
+
+.metadata { grid-area: metadata; width: 250px; margin: 5px;
+/* padding-right: 10px;  */
+}
+
+.log-history { grid-area: log-history; }
+
+.app-header { grid-area: app-header; padding: 10px; margin: 5px;}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  height: 500px;
+  width: 500px;
+  gap: 10px;
+
+}
+
+.grid {
+  display: grid;
+  width: 845px;
+  grid-gap: 10px;
+
+  grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+
+}
+@media (max-width: 768px) {
+  .grid {
+    width: 760px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+
+  }
+  .container {grid-template-columns: 250px 255px 255px ;}
+}
+@media only screen and (max-width: 1280px) {
+    
+    .container {grid-template-columns: 250px 255px 255px 255px;}
+}
+
+
+
+  </style>
+
+</head>
+<body style="  background: #557A95; height: 120%;">
+  
+    <script>
+      System.import('@ifx/root-config');
+    </script>
+    <div id="emptyinfo">
+      No Equipment was selected
+    </div>
+    <!-- <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full> -->
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

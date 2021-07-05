@@ -1,0 +1,86 @@
+:root {
+  --headercolorapps: #1d1f2e;
+  --backcolorapps: #003158;
+  --backcolorOpUI: #364999d2;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+
+}
+
+
+
+
+/* Load N Go Automation UI  */
+
+.automationuicard {
+  /* background: var(--backcolorapps); */
+  background: #003158;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px, 0px 0px;
+  width: 268px;
+  height: 100%;
+  margin: 5px;
+  /* margin-bottom: 10px; */
+}
+
+.automationuicardHeader {
+ /* width: 218px; */
+ margin-top: -6px;
+ margin-bottom: 2px;
+ margin-left: 0px;
+ margin-right: 0px;padding-top: 0px;padding-bottom: 0px;
+ background:  #1d1f2e;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ height: 39px;
+ color: rgb(237,240,244);
+}
+.automationuicardHeader p {
+  text-align: center;color: #f4f6f7;padding-bottom: 5px;padding-top: 5px;
+}
+
+/* List state job is done or not yet with color change */
+.greenstatecard {
+  background: #60dd49;
+  border-radius: 8px;margin-right: -9px;
+  padding-right: 8px;padding-left: 1px;
+  margin-left: 5px;box-shadow: 0px 0px 5px 2px;
+  height: 33px;margin-bottom: 3px;
+  margin-right: 6px;
+
+  border-color: #007a3d;
+}
+.greenstatecard p {
+  width: 100%;margin-bottom: 0px;padding: 5px;
+}
+
+.padicon {
+  margin-right: 6px;margin-left: 13px;
+}
+
+.greystatecard {
+  background: #cddacb;
+  border-radius: 8px;margin-right: -9px;
+  padding-right: 8px;padding-left: 1px;
+  margin-left: 5px;box-shadow: 0px 0px 5px 2px;
+  height: 33px;margin-bottom: 3px;
+  margin-right: 6px;
+
+  border-color: #a7b3ad;
+}
+.greystatecard p {
+  width: 100%;margin-bottom: 0px;padding: 5px;
+}
+
+.mainbuttonAUI{
+  width: 100%;padding: 10px;margin: 0;padding-left: 0px;background: 2E64F9;box-shadow: 0px 0px 2px, 0px 0px;margin-bottom: 5px;
+  align: center;
+}
+
+
+

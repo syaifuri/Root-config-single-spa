@@ -1,0 +1,124 @@
+<div class="cardmetadata">
+      <div class="metadataheader">
+          <p ><i class="fa fa-bookmark" style="padding-right: 9px;"></i>{{equipmentid}}</p>
+      </div>
+      <div class="row" class="metadatcontent">
+          <div class="col eqinfo">
+              <div class="eqinfo-satu">
+                  <p class="title" ><strong>Equipment Info</strong>  <button (click)="open(contentequip)" class="btn" ><i class="fa fa-info-circle text-center" style="margin-left: 10px;color: rgb(250,253,255);"></i></button></p>
+                  <div class="flex-md-row" style="color: rgb(255,255,255);">
+                        <div class="row">
+                            <div class="col">
+                              Interface
+                            </div>
+                            <div class="col">
+                              SECSGEM
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            Communication
+                          </div>
+                          <div class="col">
+                            Online
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          Handler
+                        </div>
+                        <div class="col">
+                          RASCO001
+                        </div>
+                    </div>
+                  </div>
+
+
+              </div>
+              <div class="eqinfo-dua">
+                  <p class="title"><strong>Product Info</strong> <button (click)="open(contentlot)" class="btn" ><i class="fa fa-info-circle" style="margin-left: 10px;color: rgb(250,253,255);"></i></button></p>
+                  <p ><span style="text-decoration: underline;">Lot</span> : TESTLOT</p>
+                  <p ><span style="text-decoration: underline;">Product</span> : PRODTEST</p>
+                  <p ><span style="text-decoration: underline;">Package </span>: PACKTEST</p>
+                  <p ><span style="text-decoration: underline;">Sales Code</span> : SALESTEST</p>
+              </div>
+              <div class="eqinfo-tiga">
+                  <p class="title"><strong>Other Info</strong> <button (click)="open(contentothers)" class="btn" ><i class="fa fa-info-circle" style="margin-left: 10px;color: rgb(250,253,255);"></i></button></p>
+                  <p ><span style="text-decoration: underline;">Operator ID</span>&nbsp;: 30061154</p>
+                  <p ><span style="text-decoration: underline;">Shift&nbsp;</span>: B</p>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+<!-- Add on  Modal Equipments-->
+<ng-template #contentequip let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detailed Equipment information</h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <h3 for="dateOfBirth">Equipment Information of {{equipmentid}}</h3>
+    </div>
+    <div>
+          <p ><span style="text-decoration: underline;">Interface</span> : SECSGEM</p>
+          <p ><span style="text-decoration: underline;">Communication </span>: Online</p>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+
+<!-- Add on  Modal Product Info-->
+<ng-template #contentlot let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detailed Product information</h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <h3 >Product information of {{equipmentid}}</h3>
+    </div>
+    <div>
+      <p class="title"><strong>Product Info</strong> <button (click)="open(contentlot)" class="btn" ><i class="fa fa-info-circle" style="margin-left: 10px;color: rgb(250,253,255);"></i></button></p>
+      <p ><span style="text-decoration: underline;">Lot</span> : TESTLOT</p>
+      <p ><span style="text-decoration: underline;">Product</span> : PRODTEST</p>
+      <p ><span style="text-decoration: underline;">Package </span>: PACKTEST</p>
+      <p ><span style="text-decoration: underline;">Sales Code</span> : SALESTEST</p>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<!-- Add on  Modal Other Info-->
+<ng-template #contentothers let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detailed Other information</h4>
+  </div>
+  <div class="modal-body">
+    <div>
+      <h3 >Other Information</h3>
+    </div>
+    <div>
+      <p ><span style="text-decoration: underline;">Operator ID</span>&nbsp;: 30061154</p>
+      <p ><span style="text-decoration: underline;">Shift&nbsp;</span>: B</p>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
+
+<!--  <hr> <pre>{{ closeResult }}</pre> -->
+
+

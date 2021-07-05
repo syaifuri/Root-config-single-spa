@@ -1,0 +1,117 @@
+@media (max-width: 1024px) {
+  .metadata {
+    width: 100px;padding-right: 0;padding-left: 13px;
+  }
+
+}
+
+
+/* .appmodulesContainer {
+  width: 100%;
+} */
+
+/* meta data style  */
+
+.metadata {
+  width: 275px;padding: 10px;
+}
+
+.cardmetadata{
+  background: #d6d6d8;border-radius: 17px;
+  padding: 0px;margin: 17px;
+  margin-right: 0;margin-left: 0;margin-top: 8px;
+  padding-bottom: 8px;
+  box-shadow: 0px 0px 3px 0px;width: 100%;
+  padding-left: 0px;
+}
+
+.metadataheader {
+  background: #646489;border-radius: 17px;
+  margin-top: 8px;margin-bottom: 0px;
+  margin-left: 0;margin-right: 0px;
+  padding-top: 13px;padding-bottom: 0px;
+  box-shadow: 0px 0px 2px;text-align: center;
+  width: 100%;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.metadataheader p{
+  text-align: center;color: #c4d8e2;
+  padding-top: 0;padding-bottom: 17px;
+  margin-top: 1px;margin-bottom: 0px;
+
+}
+.metadatacontent {
+  /* width: 100%; */
+  margin-right: 0;
+  padding-right: 0;margin-left: 0;
+  padding-left: 0;
+
+}
+/* .eqinfo {
+  background: #262938;
+
+
+} */
+
+.eqinfo-satu {
+  /* width: 275px; */
+  background: #262938;
+  /* border-radius: 10px; */
+  box-shadow: 0px 0px 2px 0px, 0px 0px;
+  padding: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 16px;
+
+}
+
+.eqinfo-dua {
+  background: #262938;
+  border-radius: 10px;
+  padding: 10px;margin-top: 2px;
+  box-shadow: 0px 0px 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-size: 16px;
+}
+.eqinfo-tiga {
+  background: #262938;border-radius: 10px;
+  padding: 10px;margin-top: 2px;
+  box-shadow: 0px 0px 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  font-size: 16px;
+}
+
+.eqinfo .title {
+  color: #ffffff;
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+}
+.eqinfo p {
+  margin-bottom: 2px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-bottom: 2px;
+  color: #ffffff;
+
+}
+
+/* disable hover button effect  */
+/* .btn:hover {
+  color: #fff !important;
+  text-decoration: none;
+  } */
+  .btn {
+    text-align: center;
+
+  }
+  .btn:hover, .btn:active {
+    /* color: #6699cc; */
+    /* background-color: #fff; */
+    border: none;
+    text-decoration: none;
+}

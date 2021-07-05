@@ -1,0 +1,50 @@
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+
+  <single-spa-router>
+    <div class="container">
+        <!-- <div > -->
+          <!-- Metadata tag  -->
+          <div class="metadata" style="width: 250px;">
+          <!-- Meta data  -->
+          <application name="@ifx/metadata"></application>
+          
+          </div>
+
+          <!-- End Metadata tag  -->
+
+          <div class="app-header" >
+              <div class="grid" >
+                 
+                  
+
+                      <!-- Application modules  -->
+
+                      <!-- LoadNGo  -->
+                      <div style="width: fit-content;">
+                      <application name="@loadnGo"></application>
+                    </div>
+                      
+                  
+              </div>
+          </div>
+      <!-- </div> -->
+
+      <!-- Log History  -->
+      <div class="log-history" style="width: max-content;">
+          
+          <!-- Log data  -->
+          <application name="@ifx/logdata"></application>
+
+      </div>
+
+    </div>      
+     
+  </single-spa-router>
+
+

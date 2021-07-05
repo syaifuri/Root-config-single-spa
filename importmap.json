@@ -1,0 +1,9 @@
+{
+    "imports": {
+      "@ifx/root-config": "http://localhost/ifx-root-config.js",
+      "@ifx/logdata": "http://localhost:4202/main.js",
+      "@ifx/metadata": "http://localhost:4201/main.js",
+      "@loadnGo": "http://localhost:4204/main.js"
+
+    }
+}
