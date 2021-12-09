@@ -17,11 +17,11 @@ const layoutEngine = constructLayoutEngine({ routes, applications });
 
 // Element ID "Empty Info"
 document.getElementById("emptyinfo").hidden = true;
-const queryString = window.location.search
-const urlParams = new URLSearchParams(queryString);
-const hostpc = urlParams.get('hostpc')
+//const queryString = window.location.search
+//const urlParams = new URLSearchParams(queryString);
+//const hostpc = urlParams.get('hostpc')
 
-console.log(hostpc);
+//console.log(hostpc);
 
 
 
@@ -29,9 +29,9 @@ console.log(hostpc);
 // Function Rest API
 // API URL
 async function getEquipment() {
-  let response = await fetch('http://bthtsa1030.infineon.com:8000/OPUIAPI/API/GetInitialData?hostName='+ hostpc)
-  let data = await response.json()
-  // let data = {equipmentName: 'HD-001'}
+ // let response = await fetch('http://bthtsa1030.infineon.com:8000/OPUIAPI/API/GetInitialData?hostName='+ hostpc)
+ // let data = await response.json()
+ let data = {equipmentName: 'HD-001'}
   console.log(data);
   return data;
 }
