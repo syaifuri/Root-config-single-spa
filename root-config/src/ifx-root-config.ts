@@ -41,7 +41,7 @@ async function getEquipment() {
 getEquipment()
   .then(function(data) {
   // check equipment id
-    let data0 = data[0];
+    let data0 = data;
     console.log(data0);
     let equipmentName = data0['equipmentName'];
     console.log(equipmentName)
