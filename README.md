@@ -11,7 +11,7 @@ This is example project with passing custom props between root-app with other mi
     from root, change directory to "root-app"
 
         cd root-app, type in cli command :
-        - yarn install 
+        - yarn install or npm install
         - yarn start 
         web application open on http://localhost:9000/
 
